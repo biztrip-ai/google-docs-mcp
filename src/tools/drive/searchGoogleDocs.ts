@@ -62,6 +62,7 @@ export function register(server: FastMCP) {
           fields: 'files(id,name,modifiedTime,createdTime,webViewLink,owners(displayName),parents)',
           supportsAllDrives: true,
           includeItemsFromAllDrives: true,
+          corpora: 'allDrives',
         });
 
         const files = response.data.files || [];
