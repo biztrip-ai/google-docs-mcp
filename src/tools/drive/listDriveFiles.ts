@@ -131,6 +131,7 @@ export function register(server: FastMCP) {
             'files(id,name,mimeType,size,modifiedTime,createdTime,webViewLink,owners(displayName,emailAddress))',
           supportsAllDrives: true,
           includeItemsFromAllDrives: true,
+          corpora: 'allDrives',
         });
 
         const files = (response.data.files || []).map((file) => ({

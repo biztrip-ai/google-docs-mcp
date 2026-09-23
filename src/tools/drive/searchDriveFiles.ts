@@ -48,7 +48,7 @@ export function register(server: FastMCP) {
         .string()
         .optional()
         .describe(
-          'Restrict search to files inside this folder (and its subfolders). ' +
+          'Restrict search to files directly inside this folder (not subfolders). ' +
             'Use "root" for the top-level Drive. Omit to search all of Drive.'
         ),
       orderBy: z
@@ -115,7 +115,7 @@ export function register(server: FastMCP) {
         // but Drive API does not support recursive parent filtering natively — using
         // ancestor query instead which covers all descendants)
         if (args.folderId) {
-          conditions.push(`'${escapeDriveQuery(args.folderId)}' in ancestors`);
+          conditions.push(`'${escapeDriveQuery(args.folderId)}' in parents`);
         }
 
         // Date filter
@@ -140,6 +140,7 @@ export function register(server: FastMCP) {
             'nextPageToken,files(id,name,mimeType,size,modifiedTime,createdTime,webViewLink,owners(displayName,emailAddress),parents)',
           supportsAllDrives: true,
           includeItemsFromAllDrives: true,
+          corpora: 'allDrives',
         });
 
         const files = (response.data.files || []).map((file) => ({
