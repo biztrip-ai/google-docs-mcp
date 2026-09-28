@@ -8,7 +8,7 @@ export function register(server: FastMCP) {
   server.addTool({
     name: 'setFilePermission',
     description:
-      "Sets a sharing permission on a Drive file or folder. Common case: type='anyone' with role='reader' enables 'anyone with the link can view'. Use type='user' with emailAddress to grant a specific person access. Returns the created permission record.",
+      "Sets a sharing permission on a Drive file or folder. Common case: type='anyone' with role='reader' enables 'anyone with the link can view'. Use type='user' with emailAddress to grant a specific person access. To share with everyone in the organization, use type='domain' with domain set to the org's domain (e.g. 'example.com'). Returns the created permission record.",
     parameters: z.strictObject({
       fileId: z
         .string()

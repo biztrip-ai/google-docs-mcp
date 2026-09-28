@@ -4,14 +4,15 @@ Tools for reading, drafting, sending, deleting, organizing, and triaging Gmail m
 
 ## Messages
 
-| Tool                  | Description                                                                                              |
-| --------------------- | -------------------------------------------------------------------------------------------------------- |
-| `listMessages`        | Lists or searches messages using the full Gmail query syntax (e.g. `is:unread from:foo newer_than:7d`)   |
-| `getMessage`          | Fetches a single message with decoded headers, plain-text body, HTML body, and attachment metadata       |
-| `sendEmail`           | Sends a plain-text email; supports cc/bcc and threaded replies via `replyToMessageId`                    |
-| `trashMessage`        | Moves a message to Trash (reversible from the Gmail UI Trash folder for 30 days). Not a permanent delete |
-| `modifyMessageLabels` | Adds and/or removes labels on a message — used for star, archive, mark read, and custom-label tagging    |
-| `listLabels`          | Lists all system and user-created Gmail labels with their IDs, for use with the other tools              |
+| Tool                  | Description                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------- |
+| `listMessages`        | Lists or searches messages using the full Gmail query syntax (e.g. `is:unread from:foo newer_than:7d`)    |
+| `getMessage`          | Fetches a single message with decoded headers, plain-text body, HTML body, and attachment metadata        |
+| `downloadAttachment`  | Downloads one attachment (by `partId`, `attachmentId` or filename) to a local path, or inline when remote |
+| `sendEmail`           | Sends a plain-text email; supports cc/bcc and threaded replies via `replyToMessageId`                     |
+| `trashMessage`        | Moves a message to Trash (reversible from the Gmail UI Trash folder for 30 days). Not a permanent delete  |
+| `modifyMessageLabels` | Adds and/or removes labels on a message — used for star, archive, mark read, and custom-label tagging     |
+| `listLabels`          | Lists all system and user-created Gmail labels with their IDs, for use with the other tools               |
 
 ## Drafts (compose / review / send)
 
