@@ -34,7 +34,7 @@ export function register(server: FastMCP) {
   server.addTool({
     name: 'getMessage',
     description:
-      'Fetches a single Gmail message by ID with headers, decoded plain-text body, HTML body, and a list of attachments (metadata only). Use listMessages to discover message IDs.',
+      'Fetches a single Gmail message by ID with headers, decoded plain-text body, HTML body, and a list of attachments (metadata only; download one with downloadAttachment). Use listMessages to discover message IDs.',
     parameters: z.strictObject({
       messageId: z.string().describe('The Gmail message ID, typically from listMessages results.'),
       format: z
