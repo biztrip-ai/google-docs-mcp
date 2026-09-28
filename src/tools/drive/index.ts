@@ -14,6 +14,7 @@ import { register as deleteFile } from './deleteFile.js';
 import { register as createDocument } from './createDocument.js';
 import { register as createFromTemplate } from './createFromTemplate.js';
 import { register as downloadFile } from './downloadFile.js';
+import { register as uploadFile } from './uploadFile.js';
 import { register as setFilePermission } from './setFilePermission.js';
 
 export function registerDriveTools(server: FastMCP) {
@@ -32,5 +33,6 @@ export function registerDriveTools(server: FastMCP) {
   createDocument(server);
   createFromTemplate(server);
   downloadFile(server);
+  uploadFile(server);
   setFilePermission(server);
 }
